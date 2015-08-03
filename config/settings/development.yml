@@ -1,0 +1,9 @@
+database:
+  user_name: root
+  password:
+  host: localhost
+aws:
+  aws_access_key_id: 'AKIAI5UMHENKD33RU2JQ'
+  aws_secret_access_key: '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'
+  region: ''
+
