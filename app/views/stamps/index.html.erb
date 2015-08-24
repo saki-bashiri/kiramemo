@@ -9,6 +9,8 @@
   <% @stamps.each do |stamp| %>
     <li class="stamp">
       <%= image_tag(stamp.image_url, width: 200) %>
+      <div><%= stamp.name %></div>
+      <div><%= stamp.description %></div>
     </li>
   <% end %>
 </ul>
