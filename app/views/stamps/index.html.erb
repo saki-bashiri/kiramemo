@@ -1,6 +1,9 @@
 <%- model_class = Stamp -%>
 <div class="page-header">
   <h1>キラメモ</h1>
+  <div>
+    <button><%= link_to "Upload", action: :new %></button>
+  </div>
 </div>
 <ul class="table table-striped container">
   <% @stamps.each do |stamp| %>
