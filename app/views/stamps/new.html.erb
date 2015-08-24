@@ -1,4 +1,18 @@
+Upload!!
 <%= form_for(@new_image) do |f| %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
+  <table>
+    <tbody>
+      <tr>
+        <th>画像</th>
+        <td><%= f.file_field :image %></td>
+      </tr>
+      <tr>
+        <th>キーワード</th>
+        <td><%= f.text_field :name, length: 40 %></td>
+      </tr>
+      <tr>
+        <td colspan="2"><%= f.submit "Upload!" %></td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
