@@ -1,11 +1,11 @@
-<% content_for :head do %>
-<% end %>
-<h1>キラメモ</h1>
-
-<div id="container">
-  <ul>
-    <% @stamps.each do |stamp| %>
-      <li class="stamp"><%= image_tag(stamp.image_url, width: 200) %></li>
-    <% end %>
-  </ul>
+<%- model_class = Stamp -%>
+<div class="page-header">
+  <h1>キラメモ</h1>
 </div>
+<ul class="table table-striped container">
+  <% @stamps.each do |stamp| %>
+    <li class="stamp">
+      <%= image_tag(stamp.image_url, width: 200) %>
+    </li>
+  <% end %>
+</ul>
