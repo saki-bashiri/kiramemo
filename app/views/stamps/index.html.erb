@@ -1,5 +1,11 @@
+<% content_for :head do %>
+<% end %>
 <h1>キラメモ</h1>
 
-<% @stamps.each do |stamp| %>
-  <%= image_tag(stamp.image_url) %>
-<% end %>
+<div id="container">
+  <ul>
+    <% @stamps.each do |stamp| %>
+      <li class="stamp"><%= image_tag(stamp.image_url, width: 200) %></li>
+    <% end %>
+  </ul>
+</div>
