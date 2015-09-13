@@ -1,2 +1,8 @@
-
-<%= image_tag @image.image_url %>
+<div>
+  <%= image_tag @stamp.image_url %>
+</div>
+<div>
+  <%= link_to @stamp.image_url, download: @stamp.id do %>
+    Download!
+  <% end %>
+</div>

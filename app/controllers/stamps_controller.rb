@@ -6,7 +6,7 @@ class StampsController < ApplicationController
   end
 
   def show
-    @image = Stamp.find(params[:id])
+    @stamp = Stamp.find(params[:id])
   end
 
   def new
