@@ -5,5 +5,5 @@ $(window).on("load", function(){
     offset: 5,
     outerOffset: 10,
     fillEmptySpace: true
-  }).find(".stamp").css("position: relative;");
+  });
 });
