@@ -7,6 +7,6 @@ CarrierWave.configure do |config|
     region: 'ap-northeast-1'
   }
 
-  config.fog_directory = 'kiramemo'
+  config.fog_directory = Rails.env.production? ? 'kiramemo' : 'kiramemo-dev'
   config.fog_public = false
 end
