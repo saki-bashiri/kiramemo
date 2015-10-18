@@ -9,4 +9,10 @@ class Stamp < ActiveRecord::Base
   def upload!
     save!
   end
+
+  class << self
+    def paginate(pg: 1, per_page: 20)
+      page(pg).per(per_page)
+    end
+  end
 end
