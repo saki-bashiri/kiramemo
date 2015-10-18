@@ -1,8 +1,8 @@
 class StampsController < ApplicationController
-  before_filter :set_new_image
+  before_filter :set_new_image, only: [:create, :new]
 
   def index
-    @stamps = Stamp.all
+    @stamps = Stamp.paginate(pg: params[:page].to_i)
   end
 
   def show
@@ -24,6 +24,6 @@ class StampsController < ApplicationController
   end
 
   def stamp_params
-    params.require(:stamp).permit(:image)
+    params.require(:stamp).permit(:image, :description)
   end
 end

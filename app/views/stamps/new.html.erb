@@ -1,18 +1,23 @@
-Upload!!
-<%= form_for(@new_image) do |f| %>
-  <table>
-    <tbody>
-      <tr>
-        <th>画像</th>
-        <td><%= f.file_field :image %></td>
-      </tr>
-      <tr>
-        <th>キーワード</th>
-        <td><%= f.text_field :name, length: 40, placeholder: "ていうかもう寝よう" %></td>
-      </tr>
-      <tr>
-        <td colspan="2"><%= f.submit "Upload!" %></td>
-      </tr>
-    </tbody>
-  </table>
-<% end %>
+<div class="container">
+  <p>画像を Upload!!</p>
+
+  <%= form_for(@new_image) do |f| %>
+    <div>
+        <div class="form-group">
+          <label>画像</label>
+          <div>
+            <%= f.file_field :image, class: "form-condivol" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>説明</label>
+          <div>
+            <%= f.text_field :description, length: 40, class: "form-condivol", placeholder: "ていうかもう寝よう" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Upload!", class: "btn btn-primary" %>
+        </div>
+    </div>
+  <% end %>
+</div>

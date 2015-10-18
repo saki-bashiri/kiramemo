@@ -1,4 +1,4 @@
-<div class="stamp-wrap">
+<div class="stamp-wrap container">
   <ul class="stamps table table-striped container">
     <% @stamps.each do |stamp| %>
       <li class="stamp">
@@ -10,4 +10,5 @@
       </li>
     <% end %>
   </ul>
+  <%= paginate(@stamps) %>
 </div>
