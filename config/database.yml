@@ -49,6 +49,4 @@ test:
 #
 production:
   <<: *default
-  database: kiramemo_production
-  username: kiramemo
-  password: <%= ENV['KIRAMEMO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
