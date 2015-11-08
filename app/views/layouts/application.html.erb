@@ -9,8 +9,22 @@
 <body>
   <div class="container">
     <div class="page-header">
-      <h1><%= link_to "キラメモ", controller: :stamps, action: :index %></h1>
-      <button class="btn header-upload"><%= link_to "Upload", controller: :stamps, action: :new %></button>
+      <ul>
+        <li>
+          <h1><%= link_to "キラメモ", controller: :stamps, action: :top %></h1>
+        </li>
+        <li>
+          <div class="global-search-form">
+            <%= form_tag({controller: :stamps, action: :index}, method: :get) do %>
+              <%= text_field_tag :q, nil, width: 40 %>
+              <%= submit_tag "検索" %>
+            <% end %>
+          </div>
+        </li>
+        <li>
+          <button class="btn header-upload"><%= link_to "Upload", controller: :stamps, action: :new %></button>
+        </li>
+      </ul>
     </div>
     <%= yield %>
   </div>

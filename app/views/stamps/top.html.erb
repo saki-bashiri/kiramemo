@@ -1,0 +1,14 @@
+<div class="stamp-wrap container">
+  <ul class="stamps table table-striped container">
+    <% @stamps.each do |stamp| %>
+      <li class="stamp">
+        <%= link_to action: :show, id: stamp.id do %>
+          <%= image_tag(stamp.image_url, width: 200) %>
+          <div><%= stamp.name %></div>
+          <div><%= stamp.description %></div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate(@stamps) %>
+</div>
