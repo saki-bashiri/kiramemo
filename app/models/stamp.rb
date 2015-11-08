@@ -1,13 +1,31 @@
 class Stamp < ActiveRecord::Base
   mount_uploader :image, StampImageUploader
+  IMAGE_UPLOAD_KEYS = [:image, :url, :name, :description]
+
+  validates :url, length: {maximum: 255}, format: {with: /(\A\Z|\.(jpg|png|gif)\Z)/, message: ".jpg, .png, .gif のいずれかでお願いします"}
+  validate :check_attrs
 
   def upload_from_params!(params)
-    assign_attributes(params)
+    assign_attributes(params.slice(*IMAGE_UPLOAD_KEYS))
+    return unless valid?
     upload!
   end
 
   def upload!
     save!
+  end
+
+  def stamp_url
+    url.presence || image_url
+  end
+
+  def check_attrs
+    validates_image_exists
+  end
+  private :check_attrs
+
+  def validates_image_exists
+    errors[:base] << "画像の指定をしてください" if url.blank? && image.blank?
   end
 
   class << self

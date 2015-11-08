@@ -14,6 +14,10 @@ class StampsController < ApplicationController
 
   def create
     @new_image.upload_from_params!(stamp_params)
+    unless @new_image.errors.empty?
+      render :new
+      return
+    end
     redirect_to action: :show, id: @new_image.id
   end
 
@@ -28,6 +32,6 @@ class StampsController < ApplicationController
   end
 
   def stamp_params
-    params.require(:stamp).permit(:image, :description)
+    params.require(:stamp).permit(:image, :url, :description)
   end
 end
