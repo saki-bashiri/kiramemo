@@ -2,7 +2,7 @@ class StampsController < ApplicationController
   before_filter :set_new_image, only: [:create, :new]
 
   def index
-    @stamps = Stamp.paginate(pg: params[:page].to_i)
+    @stamps = Stamp.search_with_pages(params[:q].to_s, pg: params[:page].to_i)
   end
 
   def show
@@ -15,6 +15,10 @@ class StampsController < ApplicationController
   def create
     @new_image.upload_from_params!(stamp_params)
     redirect_to action: :show, id: @new_image.id
+  end
+
+  def top
+    @stamps = Stamp.paginate(pg: params[:page].to_i)
   end
 
   private
