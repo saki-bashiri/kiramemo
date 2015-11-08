@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    attributes:
+      stamp:
+        name: 名前
+        description: 説明
+        url: 画像URL
+        image: 画像
