@@ -2,9 +2,10 @@
   <div>
     <p>画像URLか画像ファイルを指定してアップロードしてください</p>
     <p>※画像URLの指定が優先されます</p>
-      <% @new_image.errors.full_messages.each do |message| %>
-        <p class="alert"><%= message %></p>
-      <% end %>
+    <p>※画像URL指定の場合は .jpg, .png, .gif の画像をお使いください</p>
+    <% @new_image.errors.full_messages.each do |message| %>
+      <p class="alert"><%= message %></p>
+    <% end %>
     <%= form_for(@new_image) do |f| %>
       <div>
         <div class="form-group">

@@ -7,6 +7,7 @@ class Stamp < ActiveRecord::Base
 
   def upload_from_params!(params)
     assign_attributes(params.slice(*IMAGE_UPLOAD_KEYS))
+    self.image = nil if url.present?
     return unless valid?
     upload!
   end
