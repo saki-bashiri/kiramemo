@@ -16,24 +16,16 @@
 
 h1{
   display: inline;
+  float: left;
 }
 
 button.header-upload{
   margin: 20px;
 }
 
-.page-header ul{
-  list-style:none;
-  padding:10px;
-  margin:10px;
-}
-
-.page-header li{
-  display:inline;
-  float:left;
-}
-
 .global-search-form{
+  float: left;
   padding: 2px;
+  padding-top: 7px;
   margin: 5px;
 }

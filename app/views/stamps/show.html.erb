@@ -2,8 +2,8 @@
   <div class="image-box">
     <div class="image-download-text text-center center-block">Click してダウンロード</div>
     <p>
-      <%= link_to @stamp.image_url, download: @stamp.id do %>
-        <%= image_tag @stamp.image_url, class: "img-rounded" %>
+      <%= link_to @stamp.stamp_url, download: @stamp.id do %>
+        <%= image_tag @stamp.stamp_url, class: "img-rounded" %>
       <% end %>
     </p>
     <p><%= @stamp.description %></p>
