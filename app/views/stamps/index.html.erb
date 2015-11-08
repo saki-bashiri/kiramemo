@@ -3,7 +3,7 @@
     <% @stamps.each do |stamp| %>
       <li class="stamp">
         <%= link_to action: :show, id: stamp.id do %>
-          <%= image_tag(stamp.image_url, width: 200) %>
+          <%= image_tag(stamp.stamp_url, width: 201) %>
           <div><%= stamp.name %></div>
           <div><%= stamp.description %></div>
         <% end %>
